@@ -1,4 +1,6 @@
 Flask==1.1.2
 gunicorn==20.0.4
-beautifulsoup4
+bs4
+lxml
+html5lib
 requests
