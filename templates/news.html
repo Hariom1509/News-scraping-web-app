@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+<!-- {% block head %}
+
+{% endblock %} -->
+
+{% block body %}
+<br>
+{% if news_topic %}
+<br>
+<br>
+<h3 class="text-danger"> Top {{news_topic}} news: </h3>
+<br>
+<br>
+{% else %}
+<h3 align="center"> It's not looking good.... </h3>
+<h5 align="center"> Select any topic...</h5>
+{% endif %}
+<div class="row">
+{% for news in all_news %}
+<div class="card col-sm-12 col-md-5 col-md-offset-2 col-lg-4 col-xl-3 text-white bg-info border-danger mb-4" id = "abcd">
+    <img src="{{news.image_url}}" class="card-img-top" class="img-fluid" style="height: 12em; max-width: 10em; align:center;"  alt="no image">
+    <div class="card-body">
+      <h5 class="card-title" href="{{news.source}}" target = "_blank">{{news.title}}</h5>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <div class="card-footer text-white mb-4" style = "position:absolute; bottom:0;">
+            <a href="{{news.source}}" class="btn btn-lg btn-block btn-outline-primary text-white" data-toggle="tooltip" data-placement="top" title="Read More">Read More</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}
